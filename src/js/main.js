@@ -1,5 +1,5 @@
 "use strict";
-console.log("hola");
+console.log("hola culo");
 const input = document.querySelector(".js-inputSearch");
 const btnSearch = document.querySelector(".js-btnSearch");
 const btnReset = document.querySelector(".js-btnReset");
@@ -29,14 +29,22 @@ function renderImageSerie(serie) {
     "https://cdn.myanimelist.net/images/qm_50.gif?s=e1ff92a46db617cb83bfc1e205aff620"
   ) {
     serie.image_url =
-      "https://via.placeholder.com/210x295/ffffff/666666/?text=TV";
+      "https://via.placeholder.com/210x295/5d58d7/f696af/?text=TV";
   }
   divContainer.innerHTML += `<img src="${serie.image_url}" alt="${serie.title}"></img>`;
 }
 
-function handleSearchElement() {
+function handleSearchElement(ev) {
+  ev.preventDefault();
   const urlApi = linkBaseApi + input.value;
   getApi(urlApi);
 }
 
+function handleReset(ev) {
+  ev.preventDefault();
+  console.log("limpio");
+  divContainer.innerHTML = "";
+}
+
 btnSearch.addEventListener("click", handleSearchElement);
+btnReset.addEventListener("click", handleReset);
