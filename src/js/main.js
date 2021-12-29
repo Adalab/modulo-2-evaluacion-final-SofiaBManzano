@@ -1,5 +1,5 @@
 "use strict";
-console.log("hola culo");
+
 const input = document.querySelector(".js-inputSearch");
 const btnSearch = document.querySelector(".js-btnSearch");
 const btnReset = document.querySelector(".js-btnReset");
@@ -22,7 +22,6 @@ function getApi(url) {
 }
 
 function renderImageSerie(serie) {
-  console.log(serie.title);
   divContainer.innerHTML += ` <p>${serie.title}</p> `;
   if (
     serie.image_url ===
@@ -46,5 +45,11 @@ function handleReset(ev) {
   divContainer.innerHTML = "";
 }
 
+function handleFav(event) {
+  console.log(event.currentTarget);
+  
+}
+
 btnSearch.addEventListener("click", handleSearchElement);
 btnReset.addEventListener("click", handleReset);
+divContainer.addEventListener("click", handleFav);
