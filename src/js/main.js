@@ -31,11 +31,13 @@ function renderImageSerie(serie) {
     serie.image_url =
       "https://via.placeholder.com/210x295/5d58d7/f696af/?text=TV";
   }
+
   divContainer.innerHTML += `<div class="divSerie" data-id="${serie.mal_id}"><p>${serie.title}</p><img src="${serie.image_url}" alt="${serie.title}"></img></div>`;
 }
 
 function handleSearchElement(ev) {
   ev.preventDefault();
+  divContainer.innerHTML = "";
   const urlApi = linkBaseApi + input.value;
   getApi(urlApi);
 }
@@ -77,14 +79,34 @@ function paintFavorites(element) {
 }
 // const addFavorite
 function addFavorite(ev) {
+  //favs.push(dataApi.find((element) => element.mal_id === parseInt(id)));
+
   //obtengo id del producto clickado
   const id = ev.currentTarget.dataset.id;
   //añado el producto
-  favs.push(dataApi.find((element) => element.mal_id === parseInt(id)));
-  console.log(favs);
-
-  paintFavorites();
+  if (!favs.find((element) => element.mal_id === parseInt(id))) {
+    favs.push(dataApi.find((element) => element.mal_id === parseInt(id)));
+    console.log(favs);
+    paintFavorites();
+    setInLocalStorage();
+  }
 }
+
+function getFromLocalStorage() {
+  const localStorageFavs = localStorage.getItem("favs");
+  if (localStorageFavs !== null) {
+    favs = JSON.parse(localStorageFavs);
+    paintFavorites();
+  }
+}
+
+//localStorage
+function setInLocalStorage() {
+  const stringifyFavs = JSON.stringify(favs);
+  localStorage.setItem("favs", stringifyFavs);
+}
+getFromLocalStorage();
 btnSearch.addEventListener("click", handleSearchElement);
 btnReset.addEventListener("click", handleReset);
 // divContainer.addEventListener("click", handleFav);
+paintFavorites();
