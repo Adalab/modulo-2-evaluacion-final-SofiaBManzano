@@ -4,6 +4,7 @@ const input = document.querySelector(".js-inputSearch");
 const btnSearch = document.querySelector(".js-btnSearch");
 const btnReset = document.querySelector(".js-btnReset");
 const divContainer = document.querySelector(".js-divContainer");
+const containerFav = document.querySelector(".js-containerFavs");
 const linkBaseApi = `https://api.jikan.moe/v3/search/anime?q=`;
 
 let dataApi = [];
@@ -41,7 +42,7 @@ function handleSearchElement(ev) {
 
 function handleReset(ev) {
   ev.preventDefault();
-  console.log("limpio");
+  input.value = "";
   divContainer.innerHTML = "";
 }
 
@@ -49,14 +50,40 @@ function seriesListener() {
   const divSerie = document.querySelectorAll(".divSerie");
   for (const serieFav of divSerie) {
     serieFav.addEventListener("click", addFavorite);
-    console.log(serieFav);
+  }
+}
+function getHtmlFavoriteCode(element) {
+  let htmlFavs = "";
+  if (
+    element.image_url ===
+    "https://cdn.myanimelist.net/images/qm_50.gif?s=e1ff92a46db617cb83bfc1e205aff620"
+  ) {
+    element.image_url =
+      "https://via.placeholder.com/210x295/5d58d7/f696af/?text=TV";
+  }
+
+  htmlFavs += `<ul class="ulFavs" data-id="${element.mal_id}">`;
+  htmlFavs += `<li>${element.title}</li>`;
+  htmlFavs += `<img src="${element.image_url}" alt="${element.title}"></img>`;
+  htmlFavs += `</ul>`;
+  return htmlFavs;
+}
+function paintFavorites(element) {
+  containerFav.innerHTML = "";
+
+  for (const element of favs) {
+    containerFav.innerHTML += getHtmlFavoriteCode(element);
   }
 }
 // const addFavorite
 function addFavorite(ev) {
+  //obtengo id del producto clickado
   const id = ev.currentTarget.dataset.id;
+  //añado el producto
   favs.push(dataApi.find((element) => element.mal_id === parseInt(id)));
   console.log(favs);
+
+  paintFavorites();
 }
 btnSearch.addEventListener("click", handleSearchElement);
 btnReset.addEventListener("click", handleReset);
