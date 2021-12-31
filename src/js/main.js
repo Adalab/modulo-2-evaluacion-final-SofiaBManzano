@@ -43,7 +43,7 @@ function renderImageSerie(serie) {
       "https://via.placeholder.com/210x295/5d58d7/f696af/?text=TV";
   }
   //aquí pinto la imagen. El data-id lo puse mas tarde para localizar a cual daba a favoritos
-  divContainer.innerHTML += `<div class="divSerie" data-id="${serie.mal_id}"><p>${serie.title}</p><img src="${serie.image_url}" alt="${serie.title}"></img></div>`;
+  divContainer.innerHTML += `<div class="divSerie" data-id="${serie.mal_id}"><p>${serie.title}</p><img class= "image-search" src="${serie.image_url}" alt="${serie.title}"></img></div>`;
 }
 
 function handleSearchElement(ev) {
@@ -80,7 +80,7 @@ function getHtmlFavoriteCode(element) {
 
   htmlFavs += `<ul class="ulFavs" data-id="${element.mal_id}">`;
   htmlFavs += `<li class= "titleFavs">♡ ${element.title} ♡</li>`;
-  htmlFavs += `<img src="${element.image_url}" alt="${element.title}"></img>`;
+  htmlFavs += `<img class="image-favs" src="${element.image_url}" alt="${element.title}"></img>`;
   htmlFavs += `</ul>`;
   return htmlFavs;
 }

@@ -3,10 +3,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 120px;
+    height: 250px;
     width: 100%;
-    background-color: rgb(61, 61, 243); 
+    background-image: url("https://i.pinimg.com/originals/83/13/c8/8313c891eb337bc7b51092ca63fe9415.gif");
+    // background-color: rgb(61, 61, 243); 
     border: 8px rgb(247, 231, 6) solid;
+    background-repeat: repeat;
     
 }
 &__title {

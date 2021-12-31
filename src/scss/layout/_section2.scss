@@ -1,6 +1,7 @@
 .section-2{
-    background-color: pink;
-    border: blue 7px solid;
+    backdrop-filter: blur(0.7px);
+    background-color: rgba(0, 0, 0, 0.2);
+    border: yellow 7px solid;
     padding: 20px;
     border-radius: 10px;
     display: flex;
@@ -8,6 +9,7 @@
     justify-content: start;
     align-items: center;
     margin-right: 20px;
+    margin-top: 30px;
     &__titleFavs{
         display: flex;
         align-items: center;
@@ -40,4 +42,8 @@
 
 .titleFavs{
     padding-bottom: 15px;
+}
+.image-favs{
+    border-radius: 10px;
+
 }
