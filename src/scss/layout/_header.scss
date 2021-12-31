@@ -1,5 +1,17 @@
-.page__header {
-  display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 3rem;
+.header {
+ &__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    width: 100%;
+    background-color: rgb(61, 61, 243); 
+    border: 8px rgb(247, 231, 6) solid;
+    
 }
+&__title {
+  font-family: 'Press Start 2P';
+  color: rgb(255, 146, 164);
+  letter-spacing: 10px;
+  text-shadow: 4px 3px 7px rgb(219, 255, 18);
+} }
