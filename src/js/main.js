@@ -45,7 +45,6 @@ function renderImageSerie(serie) {
   //aquí pinto la imagen. El data-id lo puse para localizar a cual daba a favoritos
   // divContainer.innerHTML += `<div class="divSerie" data-id="${}"><p>${serie.title}</p><img class= "image-search" src="${serie.image_url}" alt="${serie.title}"></img></div>`;
   if (favs.find((element) => element.mal_id === serie.mal_id)) {
-    
     divContainer.innerHTML += `<div class="js-divSerieFavorite" data-id="${serie.mal_id}"><p>${serie.title}</p><img class= "image-search" src="${serie.image_url}" alt="${serie.title}"></img></div>`;
   } else {
     divContainer.innerHTML += `<div class="divSerie" data-id="${serie.mal_id}"><p>${serie.title}</p><img class= "image-search" src="${serie.image_url}" alt="${serie.title}"></img></div>`;
@@ -114,11 +113,13 @@ function handleRemoveFav(ev) {
 
   // renderImageSerie();
   favs = newFavs;
-  divContainer.innerHTML = "";
+
   paintFavorites();
+  divContainer.innerHTML = "";
   for (const serie of dataApi) {
     renderImageSerie(serie);
   }
+  seriesListener();
   setInLocalStorage();
 }
 // const addFavorite

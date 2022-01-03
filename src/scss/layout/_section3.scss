@@ -37,11 +37,7 @@
         justify-content: space-around;
         align-items: flex-start;
         flex-flow: row wrap;
-        padding-right: 10px;
-        padding-left: 10px;
-        padding-top: 10px;
-        padding-bottom: 20px;
-        // width: 50vw;
+  
     }
 }
 
@@ -59,6 +55,9 @@
      margin-bottom: 10px;
      border-radius: 6px;
     cursor: pointer;
+    &:hover {
+        box-shadow: 0 19px 38px rgba(250, 138, 241, 0.603), 0 15px 12px rgba(255, 37, 121, 0.22);
+      }
     
 }
 .js-divSerieFavorite {
