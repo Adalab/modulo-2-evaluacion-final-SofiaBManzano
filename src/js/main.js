@@ -42,10 +42,10 @@ function renderImageSerie(serie) {
     serie.image_url =
       "https://via.placeholder.com/210x295/5d58d7/f696af/?text=TV";
   }
-  //aquí pinto la imagen. El data-id lo puse mas tarde para localizar a cual daba a favoritos
-
+  //aquí pinto la imagen. El data-id lo puse para localizar a cual daba a favoritos
   // divContainer.innerHTML += `<div class="divSerie" data-id="${}"><p>${serie.title}</p><img class= "image-search" src="${serie.image_url}" alt="${serie.title}"></img></div>`;
   if (favs.find((element) => element.mal_id === serie.mal_id)) {
+    
     divContainer.innerHTML += `<div class="js-divSerieFavorite" data-id="${serie.mal_id}"><p>${serie.title}</p><img class= "image-search" src="${serie.image_url}" alt="${serie.title}"></img></div>`;
   } else {
     divContainer.innerHTML += `<div class="divSerie" data-id="${serie.mal_id}"><p>${serie.title}</p><img class= "image-search" src="${serie.image_url}" alt="${serie.title}"></img></div>`;
@@ -112,11 +112,14 @@ function handleRemoveFav(ev) {
     }
   }
 
-  console.log(newFavs);
+  // renderImageSerie();
   favs = newFavs;
-  setInLocalStorage();
+  divContainer.innerHTML = "";
   paintFavorites();
-  
+  for (const serie of dataApi) {
+    renderImageSerie(serie);
+  }
+  setInLocalStorage();
 }
 // const addFavorite
 function addFavorite(ev) {

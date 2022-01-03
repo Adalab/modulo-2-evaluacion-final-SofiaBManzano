@@ -1,8 +1,8 @@
 .section-2{
     backdrop-filter: blur(0.7px);
     background-color: rgba(0, 0, 0, 0.2);
-    border: yellow 7px solid;
-width: 30%;
+    border: rgb(253, 141, 159) 7px solid;
+    padding: 20px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -10,7 +10,8 @@ width: 30%;
     align-items: center;
     margin-right: 20px;
     margin-top: 30px;
-
+ 
+  
     &__titleFavs{
         display: flex;
         align-items: center;
@@ -20,6 +21,7 @@ width: 30%;
         color: pink;
         background-color: rgb(170, 7, 61);
         padding: 10px, 30px, 10px, 30px;
+        width: 110%;
         height: 40px;
         border-radius: 30px;
        
