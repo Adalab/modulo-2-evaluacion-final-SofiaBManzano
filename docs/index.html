@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Buscador de series</title>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    
+  </head>
+
+  <body>
+    <div class="page">
+      <header class="header">
+          <div class="header__container">
+              <h1 class="header__title">ʕ´•ᴥ•`ʔ Otaku Search ʕ´•ᴥ•`ʔ</h1></div>
+          
+      </header>
+
+      <main class="page__main">
+        <section class="section-1" >  
+          <input class="js-inputSearch section-1__input" type="text" placeholder="Buscar serie...">
+          <input class="js-btnSearch section-1__input--search" type="submit" value="Buscar"> 
+          <input class="js-btnReset section-1__input--reset" type="reset" value="Reset">
+        </section>
+        
+          <article class="body_article">    
+            <section class= "section-2">
+              <h3 class="section-2__titleFavs">Series Favoritas</h3>
+             
+               <div class="js-containerFavs section-2__seriesFavs"></div>
+            </section>
+            <section class= "section-3">
+              <h3 class="section-3__titleSeries">✌Tu búsqueda✌</h3>
+               <div class="js-divContainer section-3__seriesList">
+               </div>
+             </section>
+         </article>
+
+          <script src="main.js"></script>
+      </main>
+
+
+    </div>
+
+ <script src="./assets/js/main.js"></script>  
+  </body>
+</html>
