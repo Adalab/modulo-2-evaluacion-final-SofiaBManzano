@@ -10,6 +10,8 @@
     align-items: center;
     margin-left: 20px;
     margin-top: 30px;
+    width: 80%;
+  
     &__titleSeries{
         display: flex;
         align-items: center;
@@ -25,10 +27,10 @@
     
     }
     &__seriesList {
-        font-family: monospace;
+        margin-top: 20px;
+        font-family: fantasy;
         font-size: 20px;  
-        color: palevioletred; 
-        text-shadow: 4px 3px 5px black;
+        color: yellow;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -39,13 +41,39 @@
 }
 
 .divSerie {
-    width: 250px;
-    padding-right: 20px;
-    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    border: pink 2px solid;
+    background-color: rgba(255, 255, 255, 0.096);
+    // background-image: linear-gradient(to top, rgba(255, 173, 255, 0.274), rgba(215, 113, 247, 0.562), rgba(146, 88, 255, 0.877),rgba(252, 213, 38, 0.733));
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    
 }
-
+.js-divSerieFavorite {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    background-color: pink;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
 .image-search{
     border-radius: 10px;
+    margin-top: 17px;
 }
 // .ulFavs{
 //     display: flex;

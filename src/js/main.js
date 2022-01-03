@@ -43,7 +43,13 @@ function renderImageSerie(serie) {
       "https://via.placeholder.com/210x295/5d58d7/f696af/?text=TV";
   }
   //aquí pinto la imagen. El data-id lo puse mas tarde para localizar a cual daba a favoritos
-  divContainer.innerHTML += `<div class="divSerie" data-id="${serie.mal_id}"><p>${serie.title}</p><img class= "image-search" src="${serie.image_url}" alt="${serie.title}"></img></div>`;
+
+  // divContainer.innerHTML += `<div class="divSerie" data-id="${}"><p>${serie.title}</p><img class= "image-search" src="${serie.image_url}" alt="${serie.title}"></img></div>`;
+  if (favs.find((element) => element.mal_id === serie.mal_id)) {
+    divContainer.innerHTML += `<div class="js-divSerieFavorite" data-id="${serie.mal_id}"><p>${serie.title}</p><img class= "image-search" src="${serie.image_url}" alt="${serie.title}"></img></div>`;
+  } else {
+    divContainer.innerHTML += `<div class="divSerie" data-id="${serie.mal_id}"><p>${serie.title}</p><img class= "image-search" src="${serie.image_url}" alt="${serie.title}"></img></div>`;
+  }
 }
 
 function handleSearchElement(ev) {
@@ -79,8 +85,9 @@ function getHtmlFavoriteCode(element) {
   }
 
   htmlFavs += `<ul class="ulFavs" data-id="${element.mal_id}">`;
-  htmlFavs += `<li class= "titleFavs">♡ ${element.title} ♡</li>`;
   htmlFavs += `<img class="image-favs" src="${element.image_url}" alt="${element.title}"></img>`;
+  htmlFavs += `<li class= "titleFavs"> ${element.title} </li>`;
+  htmlFavs += `<span class="removeFavs">X</span>`;
   htmlFavs += `</ul>`;
   return htmlFavs;
 }
@@ -90,13 +97,37 @@ function paintFavorites(element) {
   for (const element of favs) {
     containerFav.innerHTML += getHtmlFavoriteCode(element);
   }
+  const removeFavs = document.querySelectorAll(".removeFavs");
+  for (const removeFav of removeFavs) {
+    removeFav.addEventListener("click", handleRemoveFav);
+  }
+}
+function handleRemoveFav(ev) {
+  let newFavs = [];
+  // console.log(ev.currentTarget.parentNode.dataset.id);
+  const id = ev.currentTarget.parentNode.dataset.id;
+  for (const animeFav of favs) {
+    if (parseInt(id) !== parseInt(animeFav.mal_id)) {
+      newFavs.push(animeFav);
+    }
+  }
+
+  console.log(newFavs);
+  favs = newFavs;
+  setInLocalStorage();
+  paintFavorites();
+  
 }
 // const addFavorite
 function addFavorite(ev) {
   //obtengo id del producto clickado
   const id = ev.currentTarget.dataset.id;
   //añado el producto
+  //si no encuentras el elemento en favs con ese id, lo pusheas en favs
   if (!favs.find((element) => element.mal_id === parseInt(id))) {
+    //cambio el fondo del elemento clickado
+    ev.currentTarget.classList.remove("divSerie");
+    ev.currentTarget.classList.add("js-divSerieFavorite");
     favs.push(dataApi.find((element) => element.mal_id === parseInt(id)));
     console.log(favs);
     paintFavorites();

@@ -5,15 +5,16 @@
     align-items: center;
     height: 250px;
     width: 100%;
-    background-image: url("https://i.pinimg.com/originals/83/13/c8/8313c891eb337bc7b51092ca63fe9415.gif");
+    background-image: url("https://i.pinimg.com/originals/ae/9b/15/ae9b159f0c287425ff1c7fd8d7dc7c42.gif");
     // background-color: rgb(61, 61, 243); 
-    border: 8px rgb(247, 231, 6) solid;
-    background-repeat: repeat;
+    border: 3px rgb(247, 231, 6) solid;
+    background-repeat: no-repeat;
+    background-size: cover;
     
 }
 &__title {
   font-family: 'Press Start 2P';
-  color: rgb(255, 146, 164);
+  color: rgb(219, 255, 18);
   letter-spacing: 10px;
-  text-shadow: 4px 3px 7px rgb(219, 255, 18);
+  text-shadow: 4px 3px 7px rgb(255, 28, 115);
 } }

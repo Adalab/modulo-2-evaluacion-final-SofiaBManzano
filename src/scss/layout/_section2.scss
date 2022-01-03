@@ -2,7 +2,7 @@
     backdrop-filter: blur(0.7px);
     background-color: rgba(0, 0, 0, 0.2);
     border: yellow 7px solid;
-    padding: 20px;
+width: 30%;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -10,40 +10,67 @@
     align-items: center;
     margin-right: 20px;
     margin-top: 30px;
+
     &__titleFavs{
         display: flex;
         align-items: center;
         justify-content: center;
         font-family: 'Press Start 2P';
-        font-size: 12px;
+        font-size: 10px;
         color: pink;
         background-color: rgb(170, 7, 61);
-        width: 100%;
+        padding: 10px, 30px, 10px, 30px;
         height: 40px;
         border-radius: 30px;
-        
+       
+     
     
     }
     &__seriesFavs {
-        font-family: monospace;
+        
+        font-family: 'Press Start 2P';
         font-size: 20px;  
-        color: palevioletred; 
+        color: yellow; 
     }
 }
 .ulFavs{
+    // background-image: linear-gradient(to top, rgba(255, 173, 255, 0.274), rgba(215, 113, 247, 0.562), rgba(146, 88, 255, 0.877),rgba(252, 213, 38, 0.733));;
+    border: pink 2px solid;
+    background-color: rgba(255, 255, 255, 0.096);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
     list-style: none;
+    width: 250px;
+  padding: 20px 10px 20px 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+
 }
 
 .titleFavs{
-    padding-bottom: 15px;
+    text-align: center;
+   font-family: fantasy;
+   width: 90px;
+    font-size: 15px;
 }
 .image-favs{
     border-radius: 10px;
+    width: 30%;
 
+}
+.removeFavs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(170, 7, 61);
+    font-size:20px;
+    font-size: 15px;
+   width: 30px;
+   padding-left: 3px;
+   height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
 }
