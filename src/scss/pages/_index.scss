@@ -5,7 +5,15 @@
 
 .body_article {
   display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  @media all and (min-width:768px){ 
+    display: flex;
+    flex-direction: row;
   justify-content: space-around;
-  align-items: flex-start;
-  
+  align-items: flex-start;}
+  margin-left: 20px;
+  margin-right: 20px;
+   
 }

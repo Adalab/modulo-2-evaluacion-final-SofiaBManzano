@@ -1,21 +1,47 @@
 .section-1{
-    
     background-color: yellow;
     &__input{
+       
         border-radius: 20px; 
+        border:2px solid pink;
+        height: 30px;
+        width: 50%;
+        padding-left: 20px;
+        margin: 10px;
+        font-family: 'Press Start 2P';
+        font-size: 7px;
+        cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🦄</text></svg>")
+        16 0,
+      auto;
+      @media all and (min-width:768px){
+         border-radius: 20px; 
         border:2px solid pink;
         height: 40px;
         width: 50%;
         padding-left: 20px;
+        font-size: 10px;
         margin: 10px;
         font-family: 'Press Start 2P';
         cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🦄</text></svg>")
         16 0,
       auto;
+      }
         &--search {
             border-radius: 20px; 
             border: none;
-            height: 40px;
+            height: 35px;
+            width: 60px;
+            background-color: pink;
+            font-family: 'Press Start 2P';
+            font-size: 8px;
+            color: white;
+            margin-left: 5px;
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🦄</text></svg>")
+            16 0,
+          auto;
+          @media all and (min-width:768px){  border-radius: 20px; 
+            border: none;
+            height: 35px;
             width: 70px;
             background-color: pink;
             font-family: 'Press Start 2P';
@@ -24,12 +50,24 @@
             margin-left: 10px;
             cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🦄</text></svg>")
             16 0,
-          auto;
+          auto;}
         }
         &--reset {
             border-radius: 20px; 
             border: none;
-            height: 40px;
+            height: 35px;
+            width: 60px;
+            background-color: rgb(170, 7, 61);
+            font-family: 'Press Start 2P';
+            font-size: 8px;
+            color: pink;
+            margin-left: 5px;
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🦄</text></svg>")
+            16 0,
+          auto;
+          @media all and (min-width:768px){ border-radius: 20px; 
+            border: none;
+            height: 35px;
             width: 70px;
             background-color: rgb(170, 7, 61);
             font-family: 'Press Start 2P';
@@ -38,7 +76,7 @@
             margin-left: 10px;
             cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🦄</text></svg>")
             16 0,
-          auto;
+          auto;}
         }
     }
 

@@ -8,9 +8,21 @@
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    margin-left: 20px;
     margin-top: 30px;
-    width: 70vw;
+    width: 90%;
+
+    @media all and (min-width:768px){   backdrop-filter: blur(0.7px);
+        background-color: rgba(0, 0, 0, 0.2);
+        border: yellow 7px solid;
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        margin-left: 20px;
+        margin-top: 30px;
+        width: 70vw;}
     
   
     &__titleSeries{

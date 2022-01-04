@@ -5,16 +5,19 @@
     align-items: center;
     height: 150px;
     width: 100%;
-    background-image: url("https://i.pinimg.com/originals/ae/9b/15/ae9b159f0c287425ff1c7fd8d7dc7c42.gif");
-     
+    background-image: url("https://i.pinimg.com/originals/ae/9b/15/ae9b159f0c287425ff1c7fd8d7dc7c42.gif"); 
     border: 3px rgb(247, 231, 6) solid;
     background-repeat: no-repeat;
     background-size: cover;
     
 }
 &__title {
+  display: flex;
   font-family: 'Press Start 2P';
   color: rgb(219, 255, 18);
-
+font-size: 20px;
   text-shadow: 4px 3px 7px rgb(255, 28, 115);
+  @media all and (min-width:768px){
+    font-size: 35px;
+  }
 } }
