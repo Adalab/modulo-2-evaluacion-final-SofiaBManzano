@@ -44,12 +44,17 @@ function renderImageSerie(serie) {
   }
   //aquí pinto la imagen. El data-id lo puse para localizar a cual daba a favoritos
   // divContainer.innerHTML += `<div class="divSerie" data-id="${}"><p>${serie.title}</p><img class= "image-search" src="${serie.image_url}" alt="${serie.title}"></img></div>`;
-  
+
   //si en el array de favs encuentra un elemento con el mismo id que los de la busqueda, se añade una clase que le da el color de fondo de seleccionado
   if (favs.find((element) => element.mal_id === serie.mal_id)) {
     divContainer.innerHTML += `<div class="js-divSerieFavorite" data-id="${serie.mal_id}"><p>${serie.title}</p><img class= "image-search" src="${serie.image_url}" alt="${serie.title}"></img></div>`;
   } else {
-    divContainer.innerHTML += `<div class="divSerie" data-id="${serie.mal_id}"><p>${serie.title}</p><img class= "image-search" src="${serie.image_url}" alt="${serie.title}"></img></div>`;
+    // divContainer.innerHTML += `<div class="divSerie" data-id="${serie.mal_id}"><p>${serie.title}</p><img class= "image-search" src="${serie.image_url}" alt="${serie.title}"></img></div>`;
+    if (serie.airing === true) {
+      divContainer.innerHTML += `<div class="divSerie" data-id="${serie.mal_id}"><p>${serie.title}</p><a href="${serie.url}">Más detalles</a><img class= "image-search" src="${serie.image_url}" alt="${serie.title}"></img></div>`;
+    } else {
+      divContainer.innerHTML += `<div class="divSerie" data-id="${serie.mal_id}"><p>${serie.title}</p><p>La serie no se está transmitiendo</p><img class= "image-search" src="${serie.image_url}" alt="${serie.title}"></img></div>`;
+    }
   }
 }
 
@@ -100,12 +105,15 @@ function getHtmlFavoriteCode(element) {
 }
 
 function paintFavorites(element) {
-
   containerFav.innerHTML = "";
-//blucle por el nuevo array de favs
+  //blucle por el nuevo array de favs
   for (const element of favs) {
     //por cada element de favs me creo el codigo de la funcion getHtmlFavoriteCode
     containerFav.innerHTML += getHtmlFavoriteCode(element);
+  }
+  const animeSerie = document.querySelectorAll(".ulFavs");
+  for (const itemAnime of animeSerie) {
+    itemAnime.addEventListener("click", handleFavorite);
   }
   //me saco todas las X del html que es lo que borrará favs
   const removeFavs = document.querySelectorAll(".removeFavs");
@@ -114,6 +122,15 @@ function paintFavorites(element) {
     removeFav.addEventListener("click", handleRemoveFav);
   }
 }
+function handleFavorite(ev) {
+  //   const animeSerie = document.querySelectorAll(".ulFavs")
+  const favFound = favs.find(
+    (item) => item.mal_id === parseInt(ev.currentTarget.dataset.id)
+  );
+  console.log(favFound.title);
+}
+
+// favoritesAnime.addEventListener("click", handleFavorite);
 
 //funcion que hará que se borren los favs dando a la X
 function handleRemoveFav(ev) {
@@ -124,17 +141,17 @@ function handleRemoveFav(ev) {
   for (const animeFav of favs) {
     //si el id de la X es diferente al id de favs, pushea en el array de newFavs el id del favs
     if (parseInt(id) !== parseInt(animeFav.mal_id)) {
-      //si el id es diferente.. 
+      //si el id es diferente..
       newFavs.push(animeFav);
     }
   }
-//le digo que favs es lo mismo que newFavs para que se me pinte de nuevo el array ya sin esa serie que borré
+  //le digo que favs es lo mismo que newFavs para que se me pinte de nuevo el array ya sin esa serie que borré
   favs = newFavs;
-//me pinta los favoritos de nuevo sin el que he eliminado
+  //me pinta los favoritos de nuevo sin el que he eliminado
   paintFavorites();
   //donde salen las series, borro todo
   divContainer.innerHTML = "";
-//vuelvo a pintar todas las serie y cuando las vuelvo a pintar, como he quitado una de favoritos, esta nueva pintada me sale sin background
+  //vuelvo a pintar todas las serie y cuando las vuelvo a pintar, como he quitado una de favoritos, esta nueva pintada me sale sin background
   for (const serie of dataApi) {
     renderImageSerie(serie);
   }
@@ -142,7 +159,6 @@ function handleRemoveFav(ev) {
   seriesListener();
   setInLocalStorage();
 }
-
 
 //funcion de añadir a favorito
 function addFavorite(ev) {
@@ -180,4 +196,5 @@ function setInLocalStorage() {
 getFromLocalStorage();
 btnSearch.addEventListener("click", handleSearchElement);
 btnReset.addEventListener("click", handleReset);
+
 paintFavorites();
