@@ -40,7 +40,7 @@
   &__seriesFavs {
     font-family: "Press Start 2P";
     font-size: 20px;
-    color: yellow;
+    color: rgb(255, 255, 126);
   }
 }
 .ulFavs {
@@ -59,10 +59,9 @@
 }
 
 .titleFavs {
-  text-align: center;
-  font-family: fantasy;
+  font-family: "VT323", monospace;
   width: 90px;
-  font-size: 15px;
+  font-size: 20px;
 }
 .image-favs {
   border-radius: 10px;

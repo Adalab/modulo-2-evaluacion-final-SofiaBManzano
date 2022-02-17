@@ -53,7 +53,7 @@ function renderImageSerie(serie) {
     if (serie.airing === true) {
       divContainer.innerHTML += `<div class="divSerie" data-id="${serie.mal_id}"><p>${serie.title}</p><a href="${serie.url}">Más detalles</a><img class= "image-search" src="${serie.image_url}" alt="${serie.title}"></img></div>`;
     } else {
-      divContainer.innerHTML += `<div class="divSerie" data-id="${serie.mal_id}"><p>${serie.title}</p><p>La serie no se está transmitiendo</p><img class= "image-search" src="${serie.image_url}" alt="${serie.title}"></img></div>`;
+      divContainer.innerHTML += `<div class="divSerie" data-id="${serie.mal_id}"><p>${serie.title}</p><p class="serie-bad">La serie no se está transmitiendo</p><img class= "image-search" src="${serie.image_url}" alt="${serie.title}"></img></div>`;
     }
   }
 }
