@@ -12,10 +12,9 @@
 
   &__flowers {
     background-image: url("https://www.cameronsworld.net/img/content/29/4.gif");
-    width: 500px;
+    width: 90px;
     background-repeat: no-repeat;
     background-size: 100%;
-
     background-position: center;
     height: 76px;
     margin: 10px;
@@ -27,7 +26,7 @@
     background-position: bottom;
     width: 33%;
     height: 50%;
-    display: block;
+    // display: block;
     position: relative;
   }
 
@@ -39,15 +38,19 @@
     margin: 5%;
   }
   &__title {
+    &--name {
+      font-family: "Sniglet";
+      color: rgb(219, 255, 18);
+      text-shadow: 4px 3px 7px rgb(255, 28, 115);
+      padding: 20px;
+      @media all and (min-width: 768px) {
+        font-size: 50px;
+      }
+    }
+
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: "Press Start 2P";
-    color: rgb(219, 255, 18);
-    font-size: 20px;
-    text-shadow: 4px 3px 7px rgb(255, 28, 115);
-    @media all and (min-width: 768px) {
-      font-size: 35px;
-    }
   }
 }
