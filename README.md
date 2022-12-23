@@ -1,21 +1,11 @@
 
 
-# Evaluación final JavaScript
+# JavaScript
 
 El ejercicio consiste en desarrollar una aplicación web de búsqueda de series de anime, que nos permite
 des/marcar las series como favoritas y guardarlas en local storage.
 
-## Criterios de evaluación
 
-### General
-- Usar una estructura adecuada de ficheros y carpetas para un proyecto web, y enlazar bien los
-distintos ficheros
-
- - Tener el código perfectamente indentado
-
- - Uso de control de versiones con ramas para manejar un proyecto de código.
-
-### JavaScript básico
 
 - Crear código JavaScript con sintaxis correcta y bien estructurado
 
@@ -40,11 +30,6 @@ distintos ficheros
 - Gestionar información en formato JSON.
 
 - Usar el localStorage para guardar información en el navegador.
-
-### Issues
-- Haber resuelto las issues de la evaluación intermedia.
-
-## Otros criterios a tener en cuenta
 
 - Usar inglés para nombres de variables, funciones, clases, mensajes de commit, nombres de ficheros.
 
